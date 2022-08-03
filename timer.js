@@ -1,21 +1,21 @@
 function countDown(){
-    var now = new Date();
+    let now = new Date();
     //7 is august here index is taken
-    var countDate = new Date(2022,7,14);
+    let countDate = new Date(2022,7,14);
 
     //difference btw both dates
-    var currentTime = now.getTime();
-    var eventTime = countDate.getTime();
+    let currentTime = now.getTime();
+    let eventTime = countDate.getTime();
 
     //difTime will get time into ms
-    var difTime = eventTime - currentTime;
+    let difTime = eventTime - currentTime;
 
     //converting ms into sec,min
     //math floor get integer near to decimal value
-    var sec = Math.floor(difTime / 1000);
-    var min = Math.floor(sec / 60);
-    var hours = Math.floor(min / 60);
-    var day = Math.floor(hours / 24);
+    let sec = Math.floor(difTime / 1000);
+    let min = Math.floor(sec / 60);
+    let hours = Math.floor(min / 60);
+    let day = Math.floor(hours / 24);
 
     hours%=24;
     min%=60;
@@ -25,10 +25,10 @@ function countDown(){
     min = (min <10) ? "0"+min: min;
     sec = (sec <10) ? "0"+sec: sec;
 
-    var d = document.getElementById('days').innerText = day
+    const d = document.getElementById('days').innerText = day
     var h = document.getElementById('hours').innerText ="0"+ hours
-    var m = document.getElementById('mins').innerText = min
-    var s = document.getElementById('sec').innerText =sec
+    const m = document.getElementById('mins').innerText = min
+    const s = document.getElementById('sec').innerText =sec
 
     setTimeout(countDown , 1000);
 }
